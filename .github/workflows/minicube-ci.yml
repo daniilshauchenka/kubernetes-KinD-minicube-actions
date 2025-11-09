@@ -28,7 +28,7 @@ jobs:
       - name: Record end time
         run: |
           END_TIME=$(date +%s)
-          echo "MINICUBE_STARTUP_TIME=$((END_TIME - START_TIME))" >> $GITHUB_ENV
+          echo "Cluster startup time: $((END_TIME - START_TIME)) seconds"
 
       - name: Show cluster info
         run: |

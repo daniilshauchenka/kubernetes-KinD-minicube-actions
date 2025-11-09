@@ -24,12 +24,10 @@ jobs:
 
 
       - name: Record end time
-        run: |
-          END_TIME=$(date +%s)
-          echo "KIND_STARTUP_TIME=$((END_TIME - START_TIME))" >> $GITHUB_ENV
+        run: END_TIME=$(date +%s)
+          echo "Cluster startup time: $((END_TIME - START_TIME)) seconds"
 
       - name: Show cluster info
-        run: |
-          kubectl cluster-info
+        run: kubectl cluster-info
           kubectl get nodes
 
